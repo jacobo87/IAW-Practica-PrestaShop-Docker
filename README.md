@@ -31,7 +31,13 @@ A continuación se describen muy brevemente algunas de las tareas que tendrá qu
 
 ```apt install docker-compose```
 
+> Si queremos comprobar la versión, ejecutamos: ```docker-compose --version```
+
 5. Crear un archivo **docker-compose.yml** para poder desplegar los servicios de **PrestaShop**, **MySQL** y **phpMyAdmin**. Deberá utilizar las imágenes oficiales de [Docker Hub](https://hub.docker.com/).
+
+- Creamos el archivo ```docker-compose.yml```.
+
+
 
 7. Buscar cuál es la dirección IP pública de su instancia en AWS y comprobar que puede acceder a los servicios de **PrestaShop** y **phpMyAdmin** desde una navegador web.
 
