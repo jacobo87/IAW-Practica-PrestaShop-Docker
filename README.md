@@ -50,6 +50,8 @@ Sólo los servicios que están en la red frontend-network expondrán sus puertos
 
 A continuación se muestra un diagrama con las redes y los servicios que tiene que crear:
 
+![image1](images/índice.png "Indice")
+
 
 #### 1.2.2 Docker restart policies
 Deberá utilizar alguna política de reinicio para que los contenedores se reinicien cada vez que se detengan de forma inesperada.
