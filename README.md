@@ -28,6 +28,7 @@ A continuación se describen muy brevemente algunas de las tareas que tendrá qu
 3. Instalar y configurar [Docker](https://www.docker.com/) y [Docker Compose](https://docs.docker.com/compose/) en la máquina virtual.
 
 ```apt install docker```
+
 ```apt install docker-compose```
 
 5. Crear un archivo **docker-compose.yml** para poder desplegar los servicios de **PrestaShop**, **MySQL** y **phpMyAdmin**. Deberá utilizar las imágenes oficiales de [Docker Hub](https://hub.docker.com/).
