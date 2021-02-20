@@ -4,14 +4,14 @@
 >Ciclo: CFGS Administración de Sistemas Informáticos en Red 
 
 ## Contenido
-1. Práctica: Instalación de PrestaShop usando contenedores Docker y Docker Compose
-	1.1. Tareas a realizar
-	1.2. Requisitos del archivo docker-compose.yml
-	2.1. Networks
-	2.2. Docker restart policies
-	2.3. Variables de entorno
-	2.4. Orden en el que se inician los servicios
-2. Referencias
+1. Práctica: Instalación de PrestaShop usando contenedores Docker y Docker Compose 
+	1.1. Tareas a realizar 
+	1.2. Requisitos del archivo docker-compose.yml 
+	2.1. Networks 
+	2.2. Docker restart policies 
+	2.3. Variables de entorno 
+	2.4. Orden en el que se inician los servicios 
+2. Referencias 
 
 
 ## 1 Práctica: Instalación de PrestaShop usando contenedores Docker y Docker Compose
