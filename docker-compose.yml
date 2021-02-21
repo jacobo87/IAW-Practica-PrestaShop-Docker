@@ -25,3 +25,8 @@ services:
     networks:
       - frontend-network
       - backend-network
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin
+    ports: 
