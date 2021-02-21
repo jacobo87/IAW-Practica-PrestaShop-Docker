@@ -30,3 +30,12 @@ services:
   phpmyadmin:
     image: phpmyadmin
     ports: 
+      - 8080:80
+    environment: 
+      - PMA_ARBITRARY=1
+    networks:
+      - backend-network
+      - frontend-network
+    restart: always
+    depends_on:
+      - mysql
