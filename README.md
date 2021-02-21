@@ -6,12 +6,12 @@
 ## Contenido
 1.Práctica: Instalación de PrestaShop usando contenedores Docker y Docker Compose
 1.1. Tareas a realizar
-    1.2. Requisitos del archivo docker-compose.yml
-    1.2.1. Networks
-    1.2.2. Docker restart policies
-    1.2.3. Variables de entorno
-    1.2.4. Orden en el que se inician los servicios
-2.Referencias
+1.2. Requisitos del archivo docker-compose.yml
+2.1. Networks
+2.2. Docker restart policies
+2.3. Variables de entorno
+2.4. Orden en el que se inician los servicios
+6.Referencias
 
 
 ## 1 Práctica: Instalación de PrestaShop usando contenedores Docker y Docker Compose
@@ -90,10 +90,10 @@ volumes:
 ```
 
 > IMPORTANTE 
-- Eliminar la carpeta de install al terminar la instalación de PrestaShop.
+- **Eliminar la carpeta de install al terminar la instalación** de PrestaShop.
 ![PrestaShop](images/ps.png "PrestaShop")
 
- - Añadimos HAproxy para el balancio de carga.
+ - Añadimos HAproxy para el balanceo de la carga.
 
 ```bash
   lb:
