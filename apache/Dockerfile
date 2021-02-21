@@ -1,4 +1,4 @@
-FROM ubuntu:local
+FROM ubuntu:focal
 
 LABEL author="Jacobo Azmani"
 
