@@ -20,8 +20,8 @@ services:
 
   apache:
     build: ./apache
-    ports: 
-      - 80:80
+    #ports: 
+    #  - 80:80
     depends_on:
       - mysql
     networks:
