@@ -37,6 +37,62 @@ A continuación se describen muy brevemente algunas de las tareas que tendrá qu
 
 - Creamos el archivo ```docker-compose.yml```.
 
+```bash
+version: '3'
+
+services:
+  mysql: 
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    ports: 
+      - 3306:3306
+    environment: 
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes: 
+      - mysql_data:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d
+    networks:
+      - backend-network
+    restart: always
+
+  apache:
+    build: ./apache
+    #ports: 
+    #  - 80:80
+    depends_on:
+      - mysql
+    networks:
+      - frontend-network
+      - backend-network
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin
+    ports: 
+      - 8080:80
+    environment: 
+      - PMA_ARBITRARY=1
+    networks:
+      - backend-network
+      - frontend-network
+    restart: always
+    depends_on:
+      - mysql
+
+  lb:
+    image: dockercloud/haproxy
+    ports:
+      - 80:80
+      - 1936:1936
+    links: 
+      - apache
+    volumes: 
+      - /var/run/docker.sock:/var/run/docker.sock
+```
+
 - Con el siguiente comando, ```docker-compose up --scale apache=2```, lanzamos el tantos servicios "**apache**" como queramos, en este caso "**=2**".
 
 7. Buscar cuál es la dirección IP pública de su instancia en AWS y comprobar que puede acceder a los servicios de **PrestaShop** y **phpMyAdmin** desde una navegador web.
