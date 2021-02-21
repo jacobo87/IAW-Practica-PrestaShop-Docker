@@ -37,7 +37,7 @@ A continuación se describen muy brevemente algunas de las tareas que tendrá qu
 
 - Creamos el archivo ```docker-compose.yml```.
 
-- Con el siguiente comando, ```docker-compose up --scale apache=2```, lanzamos el tantos servicios "apache" como queramos, en este caso "=2".
+- Con el siguiente comando, ```docker-compose up --scale apache=2```, lanzamos el tantos servicios "**apache**" como queramos, en este caso "**=2**".
 
 7. Buscar cuál es la dirección IP pública de su instancia en AWS y comprobar que puede acceder a los servicios de **PrestaShop** y **phpMyAdmin** desde una navegador web.
 
