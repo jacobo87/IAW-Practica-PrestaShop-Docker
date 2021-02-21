@@ -42,7 +42,6 @@ version: '3.4'
 
 services:
   lb:
-  # Con image, indicamos que descargue una prediseñada
     image: dockercloud/haproxy
     ports:
       - 80:80
@@ -72,7 +71,6 @@ services:
     restart: always
 
   apache:
-  # Con build, le indicamos que haga una imagen desde el Dockerfile
     build: ./apache
     #ports: 
     #  - 80:80
@@ -95,6 +93,21 @@ services:
     restart: always
     depends_on:
       - mysql
+
+    prestashop:
+      image: prestashop/prestashop
+      ports:
+        - 80:80
+      environment:
+        - DB_SERVER=${DB_SERVER}
+      volumes:
+        - prestashop_data:/var/www/html
+      networks:
+        - frontend-network
+        - backend-network
+      restart: always
+      depends_on: 
+        - mysql
 
 networks:
     frontend-network:
