@@ -42,6 +42,7 @@ version: '3.4'
 
 services:
   lb:
+  # Con image, indicamos que descargue una prediseñada
     image: dockercloud/haproxy
     ports:
       - 80:80
@@ -71,6 +72,7 @@ services:
     restart: always
 
   apache:
+  # Con build, le indicamos que haga una imagen desde el Dockerfile
     build: ./apache
     #ports: 
     #  - 80:80
