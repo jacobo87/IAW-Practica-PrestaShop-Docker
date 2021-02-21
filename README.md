@@ -89,6 +89,21 @@ volumes:
     prestashop_data:
 ```
 
+ - Añadimos HAproxy para el balancio de carga.
+
+```bash
+  lb:
+    image: dockercloud/haproxy
+    ports:
+      - 80:80
+      - 1936:1936
+    links: 
+      - apache
+    volumes: 
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks: 
+      - frontend-network
+```
 - Con el siguiente comando, ```docker-compose up --scale apache=2```, lanzamos el tantos servicios "**apache**" como queramos, en este caso "**=2**".
 
 7. Buscar cuál es la dirección IP pública de su instancia en AWS y comprobar que puede acceder a los servicios de **PrestaShop** y **phpMyAdmin** desde una navegador web.
