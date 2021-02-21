@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS lamp_db;
-CREATE DATABASE lamp_db CHARSET utf8mb4;
-USE lamp_db;
+DROP DATABASE IF EXISTS ps_db;
+CREATE DATABASE ps_db CHARSET utf8mb4;
+USE ps_db;
 
 CREATE TABLE users (
     id int(11) NOT NULL auto_increment,
@@ -10,6 +10,6 @@ CREATE TABLE users (
     PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE USER IF NOT EXISTS 'lamp_user'@'%';
-SET PASSWORD FOR 'lamp_user'@'%' = 'lamp_password';
-GRANT ALL PRIVILEGES ON lamp_db.* TO 'lamp_user'@'%';
+CREATE USER IF NOT EXISTS 'ps_user'@'%';
+SET PASSWORD FOR 'ps_user'@'%' = 'ps_password';
+GRANT ALL PRIVILEGES ON lamp_db.* TO 'ps_user'@'%';
