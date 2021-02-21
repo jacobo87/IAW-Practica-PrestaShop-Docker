@@ -41,6 +41,18 @@ A continuación se describen muy brevemente algunas de las tareas que tendrá qu
 version: '3'
 
 services:
+  lb:
+    image: dockercloud/haproxy
+    ports:
+      - 80:80
+      - 1936:1936
+    links: 
+      - apache
+    volumes: 
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks: 
+      - frontend-networks
+
   mysql: 
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
@@ -82,15 +94,6 @@ services:
     depends_on:
       - mysql
 
-  lb:
-    image: dockercloud/haproxy
-    ports:
-      - 80:80
-      - 1936:1936
-    links: 
-      - apache
-    volumes: 
-      - /var/run/docker.sock:/var/run/docker.sock
 ```
 
 - Con el siguiente comando, ```docker-compose up --scale apache=2```, lanzamos el tantos servicios "**apache**" como queramos, en este caso "**=2**".
