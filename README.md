@@ -94,6 +94,9 @@ volumes:
 ![PrestaShop](images/ps.png "PrestaShop")
 
 - Para poder elminar la carpeta install dentro del contenedor, seguimos los siguientes pasos:
+```bash
+docker exec -i <Nº de imagen docker> /bin/bash
+```
 ![PrestaShop](images/install.png "PrestaShop")
 
  - Añadimos HAproxy para el balanceo de la carga.
