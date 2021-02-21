@@ -1,17 +1,5 @@
 version: '3.4'
 services:
-    lb:
-      image: dockercloud/haproxy 
-      ports:
-        - 80:80 
-        - 1936:1936 
-      links:
-        - apache 
-      volumes:
-        - /var/run/docker.sock:/var/run/docker.sock 
-      networks:
-        - frontend-network
-
     phpmyadmin:
         image: phpmyadmin
         environment:
@@ -35,21 +23,27 @@ services:
             - MYSQL_PASSWORD=${MYSQL_PASSWORD}
         volumes:
             - mysql_data:/var/lib/mysql
-            - ./sql:/docker-entrypoint-initdb.d
         networks:
             - backend-network
         restart: always
-    apache: 
-        build: ./apache
-        depends_on: 
-            - mysql
-        networks: 
+    prestashop:
+        image: prestashop/prestashop
+        ports:
+            - 80:80
+        environment:
+            - DB_SERVER=${DB_SERVER}
+        volumes:
+            - prestashop_data:/var/www/html
+        networks:
             - frontend-network
             - backend-network
         restart: always
+        depends_on: 
+            - mysql
 networks:
     frontend-network:
     backend-network:
 
 volumes:
     mysql_data:
+    prestashop_data:
