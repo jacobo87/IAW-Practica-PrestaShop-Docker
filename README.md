@@ -89,6 +89,9 @@ volumes:
     prestashop_data:
 ```
 
+> IMPORTANTE 
+- Eliminar la carpeta de install al terminar la instalación de PrestaShop.
+
  - Añadimos HAproxy para el balancio de carga.
 
 ```bash
