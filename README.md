@@ -91,6 +91,7 @@ volumes:
 
 > IMPORTANTE 
 - Eliminar la carpeta de install al terminar la instalación de PrestaShop.
+![PrestaShop](images/ps.png "PrestaShop")
 
  - Añadimos HAproxy para el balancio de carga.
 
