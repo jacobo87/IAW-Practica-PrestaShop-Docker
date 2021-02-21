@@ -1,4 +1,4 @@
-version: '3'
+version: '3.4'
 
 services:
   lb:
@@ -54,3 +54,9 @@ services:
     depends_on:
       - mysql
 
+networks:
+    frontend-network:
+    backend-network:
+
+volumes:
+    mysql_data:

@@ -38,7 +38,7 @@ A continuación se describen muy brevemente algunas de las tareas que tendrá qu
 - Creamos el archivo ```docker-compose.yml```.
 
 ```bash
-version: '3'
+version: '3.4'
 
 services:
   lb:
@@ -51,7 +51,7 @@ services:
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock
     networks: 
-      - frontend-networks
+      - frontend-network
 
   mysql: 
     image: mysql
@@ -93,6 +93,13 @@ services:
     restart: always
     depends_on:
       - mysql
+
+networks:
+    frontend-network:
+    backend-network:
+
+volumes:
+    mysql_data:
 
 ```
 
