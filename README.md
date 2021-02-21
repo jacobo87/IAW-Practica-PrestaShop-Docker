@@ -5,12 +5,12 @@
 
 ## Contenido
 1.Práctica: Instalación de PrestaShop usando contenedores Docker y Docker Compose
-1.1. Tareas a realizar
-1.2. Requisitos del archivo docker-compose.yml
-2.1. Networks
-2.2. Docker restart policies
-2.3. Variables de entorno
-2.4. Orden en el que se inician los servicios
+  1.1. Tareas a realizar
+  1.2. Requisitos del archivo docker-compose.yml
+  2.1. Networks
+  2.2. Docker restart policies
+  2.3. Variables de entorno
+  2.4. Orden en el que se inician los servicios
 2.Referencias
 
 
@@ -42,6 +42,7 @@ version: '3.4'
 
 services:
   lb:
+  # Con image, indicamos que descargue una prediseñada
     image: dockercloud/haproxy
     ports:
       - 80:80
@@ -71,6 +72,7 @@ services:
     restart: always
 
   apache:
+  # Con build, le indicamos que haga una imagen desde el Dockerfile
     build: ./apache
     #ports: 
     #  - 80:80
