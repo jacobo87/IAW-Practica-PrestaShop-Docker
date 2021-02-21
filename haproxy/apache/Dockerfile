@@ -1,22 +1,21 @@
 FROM ubuntu:focal
 
-LABEL author="Jacobo Azmani"
+LABEL title="apache-lamp" \
+  author="Jacobo Azmani"
 
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive 
+ENV TZ=Europe/Madrid
 
-RUN apt update \
-    && apt install apache2 -y\
-    && apt install php -y\
-    && apt install libapache2-mod-php -y \
-    && apt install php-mysql -y
+RUN apt-get update \
+    && apt-get install -y apache2 \
+    && apt-get install -y php \
+    && apt-get install -y libapache2-mod-php \
+    && apt-get install -y php-mysql
 
-RUN apt install git -y \
-    && cd /tmp \
-    && git clone https://github.com/jacobo87/IAW-Practica-PrestaShop-Docker \
-    %% mv /tmp/IAW-Practica-PrestaShop-Docker/* /var/www/html \
-    && sed -i 's/localhost/mysql/' /var/www/html/config.php \
-    && rm /var/www/html/index.html
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
 
 EXPOSE 80
 
-CMD ["usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]

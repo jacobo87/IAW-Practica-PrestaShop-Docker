@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:focal
 
 LABEL title="apache-lamp" \
   author="Jacobo Azmani"
