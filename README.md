@@ -35,7 +35,7 @@ A continuación se describen muy brevemente algunas de las tareas que tendrá qu
 
 5. Crear un archivo **docker-compose.yml** para poder desplegar los servicios de **PrestaShop**, **MySQL** y **phpMyAdmin**. Deberá utilizar las imágenes oficiales de [Docker Hub](https://hub.docker.com/).
 
-- Creamos el archivo ```docker-compose.yml```.
+- Creamos el archivo ```docker-compose.yml```:
 
 ```bash
 version: '3.4'
