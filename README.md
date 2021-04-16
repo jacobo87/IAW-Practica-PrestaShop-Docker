@@ -114,7 +114,7 @@ docker exec -i <Nº de imagen docker> /bin/bash
     networks: 
       - frontend-network
 ```
-- Con el siguiente comando, ```docker-compose up --scale apache=2```, lanzamos el tantos servicios "**apache**" como queramos, en este caso "**=2**".
+- Con el siguiente comando, ```docker-compose up --scale apache=2```, lanzamos tantos servicios "**apache**" como queramos, en este caso "**=2**".
 
 7. Buscar cuál es la dirección IP pública de su instancia en AWS y comprobar que puede acceder a los servicios de **PrestaShop** y **phpMyAdmin** desde una navegador web.
 
