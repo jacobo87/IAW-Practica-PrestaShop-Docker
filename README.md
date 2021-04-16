@@ -89,6 +89,14 @@ volumes:
     prestashop_data:
 ```
 
+- Para lanzarlo usamos el comando
+```
+docker-compose up -d
+```
+> "-d" lo usamos para lanzarlo en 2º plano y que no nos bloquee la terminal 
+
+
+
 > IMPORTANTE 
 - **Eliminar la carpeta de install al terminar la instalación** de PrestaShop.
 ![PrestaShop](images/ps.png "PrestaShop")
